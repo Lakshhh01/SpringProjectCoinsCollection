@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin CRUD</title>
+    <script src="./main.js"></script>
+</head>
+
+<body>
+
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Coin Collections</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#coinCards">View Collections</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#addcoinform">Add Coin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#updatecoinform">Update Coin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#deletecoinform">Delete Coin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#aboutus">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- End of Navbar -->
+        <div class="container">
+            <div class="text-center">
+                <img id="collageImage" src="./images/collections.gif" alt="Collage" class="img-fluid my-3">
+            </div>
+            <div class="hover-area">
+                <p class="display-5 py-3 m-2 hidden-text">Welcome Back !! Have a Look At your Collections...</p>
+            </div>
+            <hr>
+
+            <!-- DISPLAY COINS -->
+            <div id="coinCards">
+                <script>getCoins()</script>
+            </div>
+
+            <!-- ADD -->
+            <div id="addcoinform" class="mt-5 mb-2">
+                <h2>Add Coin to Collection</h2>
+                <hr>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter coin name">
+                </div>
+                <div class="mb-3">
+                    <label for="quantity" class="form-label">Quantity</label>
+                    <textarea class="form-control" id="quantity" rows="3"
+                        placeholder="Enter Quantity of coins"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="value" class="form-label">Value</label>
+                    <input type="text" class="form-control" id="value" placeholder="Enter value">
+                </div>
+                <div class="mb-3">
+                    <label for="country" class="form-label">Country</label>
+                    <input type="text" class="form-control" id="country" placeholder="Enter country">
+                </div>
+                <div class="mb-3">
+                    <label for="denomination" class="form-label">Denomination</label>
+                    <input type="text" class="form-control" id="denominationAdd" placeholder="Enter coin denomination">
+                </div>
+                <button type="button" onclick="addCoin()" class="btn btn-success  mb-3"><a class="nav-link"
+                        href="#coinCards">Add to Collection</a></button>
+            </div>
+
+
+            <!--  UPDATE->
+
+
+            <div id="updatecoinform" class="mt-5 mb-2">
+                <h2>Update Coin in Collection</h2>
+                <hr>
+
+            </div>
+            <div class="mb-3">
+                <select id="dropdown" onchange="handleSelection()">
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="option1">Update Name</option>
+                    <option value="option2">Update Country</option>
+                    <option value="option3">Update Quantity</option>
+                    <option value="option4">Update Value</option>
+
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="updatedenomination" class="form-label">Denomination</label>
+                <input type="text" class="form-control" id="updatedenomination"
+                    placeholder="Enter denomination of coin that you want to update">
+
+            </div>
+            <div class="mb-3" id="updateInputField" style="display: none;">
+                <label id="updateInputLabel" class="form-label"></label>
+                <input type="text" class="form-control" id="updateValue" placeholder="">
+            </div>
+
+            
+
+            <div class="mb-3" id="updateCountryField" style="display: none;">
+                <label id="updateCountryLabel" class="form-label">Enter new country:</label>
+                <input type="text" class="form-control" id="updateValueCountry" placeholder="Enter new country">
+            </div>
+            <button type="button" onclick="updateCoin(document.getElementById('denomination').value)"
+                class="btn btn-warning  mb-3"><a class="nav-link" href="#coinCards" style="color: white;">Update the
+                    Coin</a></button>
+                -->
+
+                <div id="updatecoinform" class="mt-5 mb-2">
+                    <h2>Update Coin in Collection</h2>
+                    <hr>
+                </div>
+                <div class="mb-3">
+                    <select id="dropdown" onchange="handleSelection()">
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="option1">Update Name</option>
+                        <option value="option2">Update Country</option>
+                        <option value="option3">Update Quantity</option>
+                        <option value="option4">Update Value</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="updatedenomination" class="form-label">Denomination</label>
+                    <input type="text" class="form-control" id="updatedenomination"
+                        placeholder="Enter denomination of coin that you want to update">
+                </div>
+                <div class="mb-3" id="updateInputField" style="display: none;">
+                    <label id="updateInputLabel" class="form-label"></label>
+                    <input type="text" class="form-control" id="updateValue" placeholder="">
+                </div>
+                <button type="button" onclick="updateCoin()" class="btn btn-warning mb-3">
+                    <a class="nav-link" href="#coinCards" style="color: white;">Update the Coin</a>
+                </button>
+                
+
+            <!-- DELETE -->
+
+            <div id="deletecoinform" class="mt-5 mb-2">
+                <h2>Delete Coin from Collection</h2>
+                <hr>
+                <div class="mb-3">
+                    <label for="denomination" class="form-label">Denomination</label>
+                    <input type="text" class="form-control" id="denomination" placeholder="Enter coin denomination">
+                </div>
+                <button type="button" onclick="deleteCoin(document.getElementById('denomination').value)"
+                    class="btn btn-danger  mb-3"><a class="nav-link" href="#coinCards">Remove From
+                        Collection</a></button>
+
+            </div>
+            <!-- About  Section -->
+            <div id="aboutus" class="mt-5 mb-2 about-us">
+                <h2>About </h2>
+                <hr>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi nihil ut impedit nam beatae? Fuga
+                    adipisci hic dolor ut fugit vitae perferendis eius totam eaque repellendus. Laborum ratione aut
+                    modi.
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. A autem rem exercitationem, nulla adipisci
+                    ipsam, fuga sint voluptatibus assumenda omnis laboriosam cumque recusandae
+                    doloribus et quibusdam saepe tenetur voluptatum nemo?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit suscipit sapiente quidem. Autem tempora
+                    blanditiis inventore impedit ea eos consequuntur dolorem minima. Ipsam numquam rerum laboriosam non
+                    asperiores cumque error?
+                </p>
+            </div>
+
+        </div>
+        </div>
+
+    </body>
+
+</html>
